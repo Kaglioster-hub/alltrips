@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -15,16 +14,27 @@
 </head>
 <body>
   <header class="aura">🌌 AllTrips ∞ Divine Travel Engine</header>
+
   <main>
-    <form id="tripForm">
-      <input type="text" id="from" placeholder="Da dove parti?" required />
-      <input type="text" id="to" placeholder="Dove vuoi andare?" required />
-      <input type="date" id="date" required />
-      <button type="submit">🔍 Trova viaggio</button>
-    </form>
-    <div id="results" class="divine-box"></div>
-    <section id="heatmap"></section>
+    <section class="form-section">
+      <div class="headline">🔮 Inserisci la tua rotta interiore</div>
+      <form id="tripForm">
+        <input type="text" id="from" placeholder="Da dove parti?" required />
+        <input type="text" id="to" placeholder="Dove vuoi andare?" required />
+        <input type="date" id="date" required />
+        <button type="submit">🔍 Trova viaggio</button>
+      </form>
+    </section>
+
+    <div id="results" class="divine-box pulse-box"></div>
+
+    <section id="heatmap" class="divine-heat">
+      <p>🔥 Heatmap viaggiatori attiva.</p>
+    </section>
   </main>
-  <footer class="aura-foot">© AllTrips GODENGINE – Tutti i viaggi, una sola coscienza</footer>
+
+  <footer class="aura-foot">
+    © AllTrips GODENGINE – Tutti i viaggi, una sola coscienza
+  </footer>
 </body>
 </html>
