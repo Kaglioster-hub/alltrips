@@ -1,23 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("tripForm");
-  const results = document.getElementById("results");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    
-    const from = document.getElementById("from").value.trim();
-    const to = document.getElementById("to").value.trim();
-    const date = document.getElementById("date").value;
-
-    if (!from || !to || !date) {
-      results.innerHTML = "⚠️ Inserisci tutti i campi per cercare un viaggio.";
-      return;
+export async function getHotels(lat, lon) {
+  const response = await fetch(`https://booking-com.p.rapidapi.com/v1/hotels/search-by-coordinates?latitude=${lat}&longitude=${lon}&checkin_date=2025-08-01&checkout_date=2025-08-03&adults_number=1`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "booking-com.p.rapidapi.com",
+      "x-rapidapi-key": "YOUR_API_KEY"
     }
-
-    results.innerHTML = `
-      <div class="divine-box">
-        🔍 <span class="pulse">Ricerca in corso</span> da <b>${from}</b> a <b>${to}</b> per il <b>${date}</b>...
-      </div>
-    `;
   });
-});
+  return await response.json();
+}

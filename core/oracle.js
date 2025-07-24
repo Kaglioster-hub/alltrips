@@ -1,19 +1,24 @@
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("🔮 Oracle attivo – Tutti i viaggi saranno rivelati...");
 
-  // Mostra un messaggio ispirazionale dinamico nella console o nel DOM
-  const divineMessages = [
-    "✨ Dove vai non serve il passato.",
-    "🌌 Ogni viaggio è una rinascita cosmica.",
-    "🧭 La tua destinazione ti sta già cercando.",
-    "🔥 Clicca. Parti. Risorgi.",
-    "🌍 La realtà comincia dove finisce la mappa."
-  ];
-
-  const selected = divineMessages[Math.floor(Math.random() * divineMessages.length)];
-  console.log("🗝️ " + selected);
-
-  // (Facoltativo) Mostra frase nel DOM se esiste un elemento con id #tagline
-  const tagline = document.getElementById("tagline");
-  if (tagline) tagline.textContent = selected;
-});
+export async function getFlights(from, to, date) {
+  const response = await fetch("https://fly-scraper.p.rapidapi.com/flights/search-detail", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-rapidapi-host": "fly-scraper.p.rapidapi.com",
+      "x-rapidapi-key": "YOUR_API_KEY"
+    },
+    body: JSON.stringify({
+      itineraryId: "EXAMPLE",
+      sessionId: "EXAMPLE",
+      market: "IN",
+      locale: "en-US",
+      currency: "USD",
+      adults: 1,
+      cabinClass: "economy",
+      flights: [
+        { originIata: from, destinationIata: to, departDate: date }
+      ]
+    })
+  });
+  return await response.json();
+}
