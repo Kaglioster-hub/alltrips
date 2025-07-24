@@ -1,24 +1,53 @@
-<section class="form-section">
-  <h2 class="headline">🌐 Inserisci la tua rotta interiore</h2>
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AllTrips ∞ Divine Travel Engine</title>
+    <link rel="stylesheet" href="./core/divine_style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>✈️ AllTrips ∞ Divine Travel Engine</h1>
+    </header>
 
-  <form id="tripForm">
-    <input type="text" id="from" placeholder="Da dove parti?" required />
-    <input type="text" id="to" placeholder="Dove vuoi andare?" required />
-    <input type="date" id="date" required />
+    <section class="form-section">
+      <h2 class="headline">🌐 Inserisci la tua rotta interiore</h2>
 
-    <p class="default-type">🔁 Ricerca predefinita: <strong>Pacchetto All-Inclusive</strong></p>
+      <form id="tripForm">
+        <input type="text" id="from" placeholder="Da dove parti?" required />
+        <input type="text" id="to" placeholder="Dove vuoi andare?" required />
+        <input type="date" id="date" required />
 
-    <details class="toggle-options">
-      <summary>⚙️ Modifica preferenze viaggio</summary>
-      <div class="option-group">
-        <label><input type="radio" name="type" value="oneway" /> Solo Andata</label>
-        <label><input type="radio" name="type" value="roundtrip" /> Andata e Ritorno</label>
-        <label><input type="checkbox" name="hotel" checked /> Hotel</label>
-        <label><input type="checkbox" name="flight" checked /> Volo</label>
-        <label><input type="checkbox" name="car" /> Noleggio</label>
-      </div>
-    </details>
+        <p class="default-type">🔁 Ricerca predefinita: <strong>Pacchetto All-Inclusive</strong></p>
 
-    <button type="submit">🔍 Cerca il tuo Viaggio Totale</button>
-  </form>
-</section>
+        <details class="toggle-options">
+          <summary>⚙️ Modifica preferenze viaggio</summary>
+          <div class="option-group">
+            <label><input type="radio" name="type" value="oneway" /> Solo Andata</label>
+            <label><input type="radio" name="type" value="roundtrip" checked /> Andata e Ritorno</label>
+            <label><input type="checkbox" name="hotel" checked /> Hotel</label>
+            <label><input type="checkbox" name="flight" checked /> Volo</label>
+            <label><input type="checkbox" name="car" /> Noleggio</label>
+          </div>
+        </details>
+
+        <button type="submit">🔍 Cerca il tuo Viaggio Totale</button>
+      </form>
+    </section>
+
+    <div id="results" class="divine-box">
+      <p class="pulse-box">🧭 Attendi: stiamo cercando il miglior pacchetto completo per te...</p>
+    </div>
+
+    <div id="heatmap" class="divine-heat">🔥 Heatmap viaggiatori attiva.</div>
+
+    <footer>
+      AllTrips &copy; 2025 ∞ Powered by GODENGINE ✨
+    </footer>
+
+    <script src="./core/oracle.js"></script>
+    <script src="./core/goldengine.js"></script>
+    <script src="./core/autofeed.js"></script>
+  </body>
+</html>

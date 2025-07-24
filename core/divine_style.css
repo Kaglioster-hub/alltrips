@@ -121,6 +121,48 @@ button:hover {
   box-shadow: 0 0 24px #38bdf8cc;
 }
 
+details.toggle-options {
+  margin-top: 1.4rem;
+  background: #1e293b;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: inset 0 0 0 1px #334155;
+  text-align: left;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  outline: none;
+}
+
+.option-group {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.option-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--subtle);
+  transition: color 0.3s;
+}
+
+.option-group input[type="radio"],
+.option-group input[type="checkbox"] {
+  accent-color: var(--primary);
+  transform: scale(1.2);
+}
+
+.option-group label:hover {
+  color: var(--primary-soft);
+}
+
 .divine-box {
   margin: 2rem auto;
   max-width: 900px;
@@ -191,5 +233,9 @@ button:hover {
     width: 100%;
     margin: 0.4rem 0;
     max-width: none;
+  }
+
+  .option-group {
+    display: block;
   }
 }
